@@ -83,6 +83,10 @@ while (my $line = <STDIN>) {
 		$file_2 = $5;
 		if ($file_2 ne "/dev/null") {
 			$last_file_seen = $file_2;
+		} else {
+			if ($patch_mode) {
+				print "\n";
+			}
 		}
 
 		print file_change_string($file_1,$file_2) . "\n";
